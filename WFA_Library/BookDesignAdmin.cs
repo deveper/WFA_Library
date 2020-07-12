@@ -83,7 +83,7 @@ namespace WFA_Library
                     Author= author,
                     Book = book
                 }
-            };
+            }; 
 
             book.BookTypeId = Convert.ToInt32(listBox2.SelectedValue);
 
