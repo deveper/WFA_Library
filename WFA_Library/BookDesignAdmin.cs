@@ -60,7 +60,6 @@ namespace WFA_Library
         //AuthorBook authorBook = new AuthorBook();
         private void mtbAdd_Click(object sender, EventArgs e)
         {
-            //MyContext ctx = new MyContext();
             AuthorBook authorBook = new AuthorBook();
             Author author = new Author();
             //Booktype booktype = new Booktype();
@@ -74,8 +73,6 @@ namespace WFA_Library
                 //author = services.GetAuthors().Where(a => a.AuthorId == (int)item);
                 author = (Author)services.GetAuthors().Where(i => i.AuthorId == (int)item).FirstOrDefault();
             }
-
-
             book.AuthorBooks = new List<AuthorBook>
             {
                 new AuthorBook
@@ -84,14 +81,10 @@ namespace WFA_Library
                     Book = book
                 }
             }; 
-
             book.BookTypeId = Convert.ToInt32(listBox2.SelectedValue);
-
             bool result1 = services.AddBook(book);
             MetroMessageBox.Show(this, result1 ? "Book Added Succesfully" : "Error", "Info",
             MessageBoxButtons.OK, result1 ? MessageBoxIcon.Information : MessageBoxIcon.Error);
-
-
             BookSearch();
         }
 
@@ -107,7 +100,6 @@ namespace WFA_Library
             listBox1.SelectionMode = SelectionMode.MultiExtended;
             var alist = services.GetAuthors().Select(x => x.AuthorId).ToList();
             listBox1.DataSource = alist;
-            //listBox1.ValueMember = "AuthorId";
             #endregion
 
             #region BookTypeList
