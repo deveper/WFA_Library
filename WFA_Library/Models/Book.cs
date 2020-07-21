@@ -19,8 +19,8 @@ namespace WFA_Library.Models
         public string BookName { get; set; }
         public DateTime AddedDate { get; set; }//eklenme tarihi
         public DateTime ReleaseDate { get; set; }//basım yılı
-        public int Isbn { get; set; }
-        public int TotalQuantity { get; set; }//Toplam  bulunan adet
+        public string Isbn { get; set; }
+        public string TotalQuantity { get; set; }//Toplam  bulunan adet
         public int Quantity { get; set; }//Anlık stok adeti
         public virtual Booktype Booktype { get; set; }//kitap tiplerinin kitap taplosunda gözükmesi için virtual işaretlenmeli
         public int BookTypeId { get; set; }

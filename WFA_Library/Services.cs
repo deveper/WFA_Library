@@ -42,7 +42,7 @@ namespace WFA_Library
             return _mycontext.Books.Where(x =>
             x.BookName.Contains(param) ||
             x.BookId.ToString().Contains(param) ||
-            x.Isbn.ToString().Contains(param) 
+            x.Isbn.Contains(param) 
             ).ToList();
         }
         public List<Book> GetBooks()
