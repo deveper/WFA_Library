@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mtgAuthorDetail = new MetroFramework.Controls.MetroGrid();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.txtTypeName = new MetroFramework.Controls.MetroTextBox();
+            this.txtAuthorName = new MetroFramework.Controls.MetroTextBox();
             this.mtbUpdate = new MetroFramework.Controls.MetroButton();
             this.mtbDelete = new MetroFramework.Controls.MetroButton();
             this.mtbAdd = new MetroFramework.Controls.MetroButton();
@@ -41,7 +41,10 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtAuthorLastName = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mtgAuthorDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // mtgAuthorDetail
@@ -52,106 +55,73 @@
             this.mtgAuthorDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtgAuthorDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.mtgAuthorDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mtgAuthorDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mtgAuthorDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.mtgAuthorDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mtgAuthorDetail.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mtgAuthorDetail.DefaultCellStyle = dataGridViewCellStyle14;
             this.mtgAuthorDetail.EnableHeadersVisualStyles = false;
             this.mtgAuthorDetail.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mtgAuthorDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.mtgAuthorDetail.Location = new System.Drawing.Point(12, 76);
             this.mtgAuthorDetail.Name = "mtgAuthorDetail";
             this.mtgAuthorDetail.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mtgAuthorDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mtgAuthorDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.mtgAuthorDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mtgAuthorDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mtgAuthorDetail.Size = new System.Drawing.Size(440, 256);
             this.mtgAuthorDetail.TabIndex = 0;
             this.mtgAuthorDetail.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroTextBox1
+            // txtAuthorName
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(222, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[] {
-        "Search"};
-            this.metroTextBox1.Location = new System.Drawing.Point(106, 410);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(244, 23);
-            this.metroTextBox1.TabIndex = 27;
-            this.metroTextBox1.Text = "Search";
-            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // txtTypeName
-            // 
-            // 
-            // 
-            // 
-            this.txtTypeName.CustomButton.Image = null;
-            this.txtTypeName.CustomButton.Location = new System.Drawing.Point(121, 1);
-            this.txtTypeName.CustomButton.Name = "";
-            this.txtTypeName.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtTypeName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtTypeName.CustomButton.TabIndex = 1;
-            this.txtTypeName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtTypeName.CustomButton.UseSelectable = true;
-            this.txtTypeName.CustomButton.Visible = false;
-            this.txtTypeName.Lines = new string[0];
-            this.txtTypeName.Location = new System.Drawing.Point(207, 348);
-            this.txtTypeName.MaxLength = 32767;
-            this.txtTypeName.Name = "txtTypeName";
-            this.txtTypeName.PasswordChar = '\0';
-            this.txtTypeName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTypeName.SelectedText = "";
-            this.txtTypeName.SelectionLength = 0;
-            this.txtTypeName.SelectionStart = 0;
-            this.txtTypeName.ShortcutsEnabled = true;
-            this.txtTypeName.Size = new System.Drawing.Size(143, 23);
-            this.txtTypeName.TabIndex = 26;
-            this.txtTypeName.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.txtTypeName.UseSelectable = true;
-            this.txtTypeName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtTypeName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAuthorName.CustomButton.Image = null;
+            this.txtAuthorName.CustomButton.Location = new System.Drawing.Point(121, 1);
+            this.txtAuthorName.CustomButton.Name = "";
+            this.txtAuthorName.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtAuthorName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtAuthorName.CustomButton.TabIndex = 1;
+            this.txtAuthorName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtAuthorName.CustomButton.UseSelectable = true;
+            this.txtAuthorName.CustomButton.Visible = false;
+            this.txtAuthorName.Lines = new string[0];
+            this.txtAuthorName.Location = new System.Drawing.Point(207, 348);
+            this.txtAuthorName.MaxLength = 32767;
+            this.txtAuthorName.Name = "txtAuthorName";
+            this.txtAuthorName.PasswordChar = '\0';
+            this.txtAuthorName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAuthorName.SelectedText = "";
+            this.txtAuthorName.SelectionLength = 0;
+            this.txtAuthorName.SelectionStart = 0;
+            this.txtAuthorName.ShortcutsEnabled = true;
+            this.txtAuthorName.Size = new System.Drawing.Size(143, 23);
+            this.txtAuthorName.TabIndex = 26;
+            this.txtAuthorName.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.txtAuthorName.UseSelectable = true;
+            this.txtAuthorName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtAuthorName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // mtbUpdate
             // 
@@ -185,6 +155,7 @@
             this.mtbAdd.Text = "Add";
             this.mtbAdd.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.mtbAdd.UseSelectable = true;
+            this.mtbAdd.Click += new System.EventHandler(this.mtbAdd_Click);
             // 
             // mtlBack
             // 
@@ -200,6 +171,7 @@
             this.mtlBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.mtlBack.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.mtlBack.UseSelectable = true;
+            this.mtlBack.Click += new System.EventHandler(this.mtlBack_Click);
             // 
             // metroLabel1
             // 
@@ -252,17 +224,35 @@
             this.metroLabel2.Text = "Author Last Name:";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Control;
+            this.textBox1.Location = new System.Drawing.Point(124, 413);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(207, 29);
+            this.textBox1.TabIndex = 32;
+            this.textBox1.Text = "Search...";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AuthorDetailsDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 543);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.txtAuthorLastName);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.mtlBack);
-            this.Controls.Add(this.metroTextBox1);
-            this.Controls.Add(this.txtTypeName);
+            this.Controls.Add(this.txtAuthorName);
             this.Controls.Add(this.mtbUpdate);
             this.Controls.Add(this.mtbDelete);
             this.Controls.Add(this.mtbAdd);
@@ -274,6 +264,7 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.AuthorDetailsDesign_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mtgAuthorDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,8 +273,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroGrid mtgAuthorDetail;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox txtTypeName;
+        private MetroFramework.Controls.MetroTextBox txtAuthorName;
         private MetroFramework.Controls.MetroButton mtbUpdate;
         private MetroFramework.Controls.MetroButton mtbDelete;
         private MetroFramework.Controls.MetroButton mtbAdd;
@@ -291,5 +281,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox txtAuthorLastName;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

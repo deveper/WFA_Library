@@ -42,7 +42,7 @@ namespace WFA_Library
                 x.Quantity,
                 x.Booktype.TypeName,
                 Authors = string.Join("-", x.AuthorBooks.Select(y => y.Author.AuthorName + "   " + y.Author.AuthorLastName).ToList())
-                //string join liste içerisindeki elemanları bir separatör ile birleştirmek amcıyla kullanılır.
+                //string join liste içerisindeki elemanları bir separatör ile birleştirmek amacıyla kullanılır.
             }).ToList();
         }
         #endregion
@@ -55,7 +55,7 @@ namespace WFA_Library
         #endregion
 
         #region Space Control
-        public int EmptyControl(Control.ControlCollection ctrl)
+        int EmptyControl(Control.ControlCollection ctrl)
         {
             int drm = 0;
             foreach (Control item in ctrl)
@@ -95,7 +95,7 @@ namespace WFA_Library
                 }
             }
 
-        } 
+        }
         #endregion
 
         //Author author = new Author();
@@ -136,10 +136,10 @@ namespace WFA_Library
             };
                 #endregion
 
-                bool result1 = services.AddBook(book);
+                bool result = services.AddBook(book);
 
-                MetroMessageBox.Show(this, result1 ? "Book Added Succesfully" : "Error", "Info",
-                MessageBoxButtons.OK, result1 ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, result ? "Book Added Succesfully" : "Error", "Info",
+                MessageBoxButtons.OK, result ? MessageBoxIcon.Information : MessageBoxIcon.Error);
                 BookSearch();
                 ClearText(this.Controls);
 
@@ -193,9 +193,13 @@ namespace WFA_Library
         }
 
 
+
         #endregion
 
+        private void mtlBack_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

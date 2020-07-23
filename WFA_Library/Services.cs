@@ -17,13 +17,8 @@ namespace WFA_Library
             _mycontext = new MyContext();
 
         }
-        public bool Add_b_bt_a(Book book, Booktype booktype, Author author)
-        {
-            _mycontext.Books.Add(book);
-            _mycontext.Booktypes.Add(booktype);
-            _mycontext.Authors.Add(author);
-            return _mycontext.SaveChanges() > 0;
-        }
+
+        #region BookServices
         public bool AddBook(Book book)
         {
             _mycontext.Books.Add(book);
@@ -31,32 +26,52 @@ namespace WFA_Library
             //int recordcount = _mycontext.SaveChanges();
             //return recordcount > 0;//savechanges kaç adet  işlem yapıldığını gösterir
         }
-
-        public bool UserAdd(User user)
+        public List<Book> GetBooks()
         {
-            _mycontext.Users.Add(user);
-            return _mycontext.SaveChanges() > 0;
+            return _mycontext.Books.Include(x => x.AuthorBooks).ToList();
         }
         public List<Book> GetFilterBooks(string param)
         {
             return _mycontext.Books.Where(x =>
             x.BookName.Contains(param) ||
             x.BookId.ToString().Contains(param) ||
-            x.Isbn.Contains(param) 
+            x.Isbn.Contains(param)
             ).ToList();
         }
-        public List<Book> GetBooks()
+        #endregion
+
+        #region  UserServices
+        public bool UserAdd(User user)
         {
-            return _mycontext.Books.Include(x => x.AuthorBooks).ToList();
+            _mycontext.Users.Add(user);
+            return _mycontext.SaveChanges() > 0;
         }
+        #endregion
+
+        #region AuthorServices
+        public bool AuthorAdd(Author author)
+        {
+            _mycontext.Authors.Add(author);
+            return _mycontext.SaveChanges() > 0;
+        }
+        public List<Author> GetAuthors()
+        {
+            return _mycontext.Authors.Include(x => x.AuthorBooks).ToList();
+        }
+        public List<Author> GetFilterAuthors(string param)
+        {
+            return _mycontext.Authors.Where(x =>
+            x.AuthorName.Contains(param) ||
+            x.AuthorLastName.Contains(param)
+            ).ToList();
+        }
+
+        #endregion
         public List<Booktype> GetBookTypes()
         {
             return _mycontext.Booktypes.ToList();
         }
-        public List<Author> GetAuthors()
-        {
-            return _mycontext.Authors.ToList();
-        }
+
 
     }
 }
