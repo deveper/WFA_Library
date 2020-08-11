@@ -16,6 +16,7 @@ using System.Xml.Linq;
 using System.Collections;
 using System.Windows.Documents;
 using System.Data.Entity;
+using System.Runtime.Remoting.Channels;
 
 namespace WFA_Library
 {
@@ -173,6 +174,7 @@ namespace WFA_Library
 
 
             BookSearch();
+            mgDataBook.ClearSelection();
         }
 
         #region BookDetailsBtnNavi
@@ -199,6 +201,20 @@ namespace WFA_Library
         private void mtlBack_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mtbDelete_Click(object sender, EventArgs e)
+        {
+            if (mgDataBook.SelectedRows.Count==0)
+            {
+                
+               MetroMessageBox.Show(this, "Please choose a book", "Declaration", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            int  deletedData = Convert.ToInt32(mgDataBook.SelectedRows[0].Cells[0].Value);
+            bool result = services.DeleteBook(deletedData);
+            MetroMessageBox.Show(this, "delete successful","Declaration",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            BookSearch();
         }
     }
 }

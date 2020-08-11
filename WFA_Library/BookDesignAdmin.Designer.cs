@@ -137,6 +137,7 @@
             this.mtbDelete.Text = "Delete";
             this.mtbDelete.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.mtbDelete.UseSelectable = true;
+            this.mtbDelete.Click += new System.EventHandler(this.mtbDelete_Click);
             // 
             // mtbUpdate
             // 

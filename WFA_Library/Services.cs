@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using WFA_Library.Context;
@@ -19,6 +21,14 @@ namespace WFA_Library
         }
 
         #region BookServices
+
+        public bool DeleteBook(int deletedData)
+        {
+           
+            Book _deletedData = _mycontext.Books.Find(deletedData);
+            _mycontext.Books.Remove(_deletedData);
+            return _mycontext.SaveChanges() > 0;
+        }
         public bool AddBook(Book book)
         {
             _mycontext.Books.Add(book);
@@ -60,18 +70,31 @@ namespace WFA_Library
         }
         public List<Author> GetFilterAuthors(string param)
         {
-            return _mycontext.Authors.Where(x =>
+            return _mycontext.Authors.Include(x => x.AuthorBooks).Where(x =>
             x.AuthorName.Contains(param) ||
             x.AuthorLastName.Contains(param)
             ).ToList();
         }
 
         #endregion
+
+        #region BookTypeServices
+        public bool BookTypeAdd(Booktype booktype)
+        {
+            _mycontext.Booktypes.Add(booktype);
+            return _mycontext.SaveChanges() > 0;
+        }
         public List<Booktype> GetBookTypes()
         {
             return _mycontext.Booktypes.ToList();
         }
-
+        public List<Booktype> GetFilterBooktypes(string param)
+        {
+            return _mycontext.Booktypes.Where(x =>
+            x.TypeName.Contains(param)
+            ).ToList();
+        }
+        #endregion
 
     }
 }
